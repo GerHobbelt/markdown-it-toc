@@ -42,5 +42,5 @@ The end results looks like:
 
 To run the tests use:
 ```bash
-make test
+npm test
 ```
