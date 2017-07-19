@@ -1,6 +1,6 @@
 {
   "name": "@centerforopenscience/markdown-it-toc",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Adds syntax for an automatically generated table of contents to markdown-it markdown parser.",
   "main": "index.js",
   "scripts": {
