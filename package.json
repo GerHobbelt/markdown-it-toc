@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cos-forks/markdown-it-toc"
+    "url": "https://github.com/CenterForOpenScience/markdown-it-toc"
   },
   "keywords": [
     "markdown",
@@ -25,9 +25,9 @@
   "author": "Sam Chrisinger",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cos-forks/markdown-it-toc/issues"
+    "url": "https://github.com/CenterForOpenScience/markdown-it-toc/issues"
   },
-  "homepage": "https://github.com/cos-forks/markdown-it-toc",
+  "homepage": "https://github.com/CenterForOpenScience/markdown-it-toc",
   "devDependencies": {
     "browserify": "^10.1.3",
     "coveralls": "^2.11.2",
