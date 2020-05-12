@@ -128,23 +128,7 @@ Some content
 
 Some Content
 .
-<h3>Title</h3>
-<ul>
-    <li><a href="#Heading_A">Heading A</a></li>
-    <ul>
-        <li><a href="#SubHeading">SubHeading</a></li>
-    </ul>
-    <li><a href="#Heading_B">Heading B</a></li>
-    <ul>
-        <li><a href="#SubHeading_1">SubHeading</a></li>
-        <li><a href="#SubHeading_2">SubHeading</a></li>
-        <ul>
-            <li><a href="#SubSubHeading">SubSubHeading</a></li>
-        </ul>
-    </ul>
-    <li><a href="#Heading_A_1">Heading A</a></li>
-</ul>
-
+<p><h3>Title</h3><ul><li><a href="#Heading_A">Heading A</a></li><ul><li><a href="#SubHeading">SubHeading</a></li></ul><li><a href="#Heading_B">Heading B</a></li><ul><li><a href="#SubHeading_1">SubHeading</a></li><li><a href="#SubHeading_2">SubHeading</a></li><ul><li><a href="#SubSubHeading">SubSubHeading</a></li></ul></ul><li><a href="#Heading_A_1">Heading A</a></li></ul></p>
 <h1><a id="Heading_A"></a>Heading A</h1>
 <p>Some Content</p>
 <h2><a id="SubHeading"></a>SubHeading</h2>
@@ -154,6 +138,8 @@ Some Content
 <h2><a id="SubHeading_1"></a>SubHeading</h2>
 <p>Some content</p>
 <h2><a id="SubHeading_2"></a>SubHeading</h2>
+<p>Some content</p>
+<h3><a id="SubSubHeading"></a>SubSubHeading</h3>
 <p>Some content</p>
 <h1><a id="Heading_A_1"></a>Heading A</h1>
 <p>Some Content</p>

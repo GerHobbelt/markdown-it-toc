@@ -126,11 +126,7 @@ module.exports = function (md) {
     }
 
     if (headings.length === 0 && !gstate.env.ignoreEmptyTOC) {
-      headings.push({
-        level: 0,
-        anchor: '__error_toc_is_empty__',
-        content: '<strong>ERROR: TOC is empty!</strong>'
-      });
+      throw new Error('<strong>ERROR: TOC is empty!</strong>');
     }
 
     let indent = 0;
@@ -139,25 +135,25 @@ module.exports = function (md) {
       if (heading.level > indent) {
         let ldiff = (heading.level - indent);
         for (let i = 0; i < ldiff; i++) {
-          res.push(' '.repeat(indent * 2), '<ul>\n');
+          res.push('<ul>');
           indent++;
         }
       } else if (heading.level < indent) {
         let ldiff = (indent - heading.level);
         for (let i = 0; i < ldiff; i++) {
-          res.push(' '.repeat(indent * 2 - 2), '</ul>\n');
+          res.push('</ul>');
           indent--;
         }
       }
-      res = res.concat([ ' '.repeat(indent * 2), '<li><a href="#', heading.anchor, '">', heading.content, '</a></li>\n' ]);
+      res = res.concat([ '<li><a href="#', heading.anchor, '">', heading.content, '</a></li>' ]);
       return res.join('');
     });
     while (indent > 0) {
-      list.push(' '.repeat(indent * 2 - 2), '</ul>\n');
+      list.push('</ul>');
       indent--;
     }
 
-    return '<h3>' + tokens[index].content + '</h3>\n' + list.join('');
+    return '<h3>' + tokens[index].content + '</h3>' + list.join('');
   };
 
   md.core.ruler.push('grab_state', function (state) {
