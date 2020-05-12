@@ -28,13 +28,13 @@ Some content
 
 ### Deeper Heading
 .
-<p><h3>Table of Contents</h3><ul><li><a href="#Heading_1_2">Heading 1</a></li><ul><li><a href="#SubHeading_6">SubHeading</a></li></ul><li><a href="#Heading_2_10">Heading 2</a></li><ul><ul><li><a href="#Deeper_Heading_12">Deeper Heading</a></li></ul></ul></ul></p>
-<h1><a id="Heading_1_2"></a>Heading 1</h1>
+<p><h3>Table of Contents</h3><ul><li><a href="#Heading_1">Heading 1</a></li><ul><li><a href="#SubHeading">SubHeading</a></li></ul><li><a href="#Heading_2">Heading 2</a></li><ul><ul><li><a href="#Deeper_Heading">Deeper Heading</a></li></ul></ul></ul></p>
+<h1><a id="Heading_1"></a>Heading 1</h1>
 <p>Some Content</p>
-<h2><a id="SubHeading_6"></a>SubHeading</h2>
+<h2><a id="SubHeading"></a>SubHeading</h2>
 <p>Some content</p>
-<h1><a id="Heading_2_10"></a>Heading 2</h1>
-<h3><a id="Deeper_Heading_12"></a>Deeper Heading</h3>
+<h1><a id="Heading_2"></a>Heading 2</h1>
+<h3><a id="Deeper_Heading"></a>Deeper Heading</h3>
 .
 
 Test4
@@ -56,13 +56,13 @@ Heading 2
 
 ### Deeper Heading
 .
-<p><h3>Table of Contents</h3><ul><li><a href="#Heading_1_2">Heading 1</a></li><ul><li><a href="#SubHeading_7">SubHeading</a></li></ul><li><a href="#Heading_2_12">Heading 2</a></li><ul><ul><li><a href="#Deeper_Heading_15">Deeper Heading</a></li></ul></ul></ul></p>
-<h1><a id="Heading_1_2"></a>Heading 1</h1>
+<p><h3>Table of Contents</h3><ul><li><a href="#Heading_1">Heading 1</a></li><ul><li><a href="#SubHeading">SubHeading</a></li></ul><li><a href="#Heading_2">Heading 2</a></li><ul><ul><li><a href="#Deeper_Heading">Deeper Heading</a></li></ul></ul></ul></p>
+<h1><a id="Heading_1"></a>Heading 1</h1>
 <p>Some Content</p>
-<h2><a id="SubHeading_7"></a>SubHeading</h2>
+<h2><a id="SubHeading"></a>SubHeading</h2>
 <p>Some content</p>
-<h1><a id="Heading_2_12"></a>Heading 2</h1>
-<h3><a id="Deeper_Heading_15"></a>Deeper Heading</h3>
+<h1><a id="Heading_2"></a>Heading 2</h1>
+<h3><a id="Deeper_Heading"></a>Deeper Heading</h3>
 .
 
 Test5
@@ -79,12 +79,12 @@ Some content
 
 ## SubHeading
 .
-<p><h3>Title</h3><ul><li><a href="#Heading_1_2">Heading 1</a></li><li><a href="#Heading_2_6">Heading 2</a></li><ul><li><a href="#SubHeading_10">SubHeading</a></li></ul></ul></p>
-<h1><a id="Heading_1_2"></a>Heading 1</h1>
+<p><h3>Title</h3><ul><li><a href="#Heading_1">Heading 1</a></li><li><a href="#Heading_2">Heading 2</a></li><ul><li><a href="#SubHeading">SubHeading</a></li></ul></ul></p>
+<h1><a id="Heading_1"></a>Heading 1</h1>
 <p>Some Content</p>
-<h1><a id="Heading_2_6"></a>Heading 2</h1>
+<h1><a id="Heading_2"></a>Heading 2</h1>
 <p>Some content</p>
-<h2><a id="SubHeading_10"></a>SubHeading</h2>
+<h2><a id="SubHeading"></a>SubHeading</h2>
 .
 
 Test6
@@ -94,4 +94,60 @@ some text
 .
 <p>some text<br>
 <h3>Title</h3></p>
+.
+
+Test7 - generate unique permalinks
+.
+@[toc](Title)
+
+# Heading A
+
+Some Content
+
+## SubHeading
+
+Some content
+
+# Heading B
+
+Some content
+
+## SubHeading
+
+Some content
+
+## SubHeading
+
+Some content
+
+# Heading A
+
+Some Content
+.
+<h3>Title</h3>
+<ul>
+    <li><a href="#Heading_A">Heading A</a></li>
+    <ul>
+        <li><a href="#SubHeading">SubHeading</a></li>
+    </ul>
+    <li><a href="#Heading_B">Heading B</a></li>
+    <ul>
+        <li><a href="#SubHeading_1">SubHeading</a></li>
+        <li><a href="#SubHeading_2">SubHeading</a></li>
+    </ul>
+    <li><a href="#Heading_A_1">Heading A</a></li>
+</ul>
+
+<h1><a id="Heading_A"></a>Heading A</h1>
+<p>Some Content</p>
+<h2><a id="SubHeading"></a>SubHeading</h2>
+<p>Some content</p>
+<h1><a id="Heading_B"></a>Heading B</h1>
+<p>Some content</p>
+<h2><a id="SubHeading_1"></a>SubHeading</h2>
+<p>Some content</p>
+<h2><a id="SubHeading_2"></a>SubHeading</h2>
+<p>Some content</p>
+<h1><a id="Heading_A_1"></a>Heading A</h1>
+<p>Some Content</p>
 .

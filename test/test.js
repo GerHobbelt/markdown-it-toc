@@ -3,8 +3,8 @@
 /*eslint-env mocha*/
 
 let path = require('path');
-let generate = require('markdown-it-testgen');
-let md = require('markdown-it')({
+let generate = require('@gerhobbelt/markdown-it-testgen');
+let md = require('@gerhobbelt/markdown-it')({
   html: true,
   linkify: true,
   typography: true
@@ -15,7 +15,7 @@ describe('markdown-it-toc', function () {
 });
 
 describe('markdown-it-toc-default', function () {
-  generate(path.join(__dirname, 'fixtures/toc2.txt'), {
-  	tocHeader: 'test'
-  }, md);
+  generate(path.join(__dirname, 'fixtures/toc2.txt'), null, md, {
+    tocHeader: 'test'
+  });
 });

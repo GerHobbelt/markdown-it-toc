@@ -1,0 +1,39 @@
+Test1
+.
+@[toc](Title)
+.
+<p><h3>Title</h3></p>
+.
+
+Test2
+.
+@[toc]
+.
+<p><h3>test</h3></p>
+.
+
+Test3
+.
+@[toc]
+
+# Heading 1
+
+Some Content
+
+## SubHeading
+
+Some content
+
+# Heading 2
+
+### Deeper Heading
+.
+<p><h3>test</h3><ul><li><a href="#Heading_1">Heading 1</a></li><ul><li><a href="#SubHeading">SubHeading</a></li></ul><li><a href="#Heading_2">Heading 2</a></li><ul><ul><li><a href="#Deeper_Heading">Deeper Heading</a></li></ul></ul></ul></p>
+<h1><a id="Heading_1"></a>Heading 1</h1>
+<p>Some Content</p>
+<h2><a id="SubHeading"></a>SubHeading</h2>
+<p>Some content</p>
+<h1><a id="Heading_2"></a>Heading 2</h1>
+<h3><a id="Deeper_Heading"></a>Deeper Heading</h3>
+.
+
