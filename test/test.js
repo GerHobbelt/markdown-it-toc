@@ -11,11 +11,14 @@ let md = require('@gerhobbelt/markdown-it')({
 }).use(require('../'));
 
 describe('markdown-it-toc', function () {
-  generate(path.join(__dirname, 'fixtures/toc.txt'), md);
+  generate(path.join(__dirname, 'fixtures/toc.txt'), null, md, {
+    ignoreEmptyTOC: true
+  });
 });
 
 describe('markdown-it-toc-default', function () {
   generate(path.join(__dirname, 'fixtures/toc2.txt'), null, md, {
-    tocHeader: 'test'
+    tocHeader: 'test',
+    ignoreEmptyTOC: true
   });
 });

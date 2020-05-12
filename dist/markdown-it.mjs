@@ -2,7 +2,7 @@
 
 var markdownItToc = function (md) {
 
-  const TOC_REGEXP = /^@\[toc\](?:\((?:\s+)?([^\)]+)(?:\s+)?\)?)?(?:\s+?)?$/im;
+  const TOC_REGEXP = /^@\[toc\](?:\((?:\s+)?([^\)]+)(?:\s+)?\))?(?:\s*?)$/im;
   const TOC_DEFAULT = 'Table of Contents';
   let gstate;
   let tocHeadings = {};
@@ -41,6 +41,7 @@ var markdownItToc = function (md) {
 
     token = state.push('toc_open', 'toc', 1);
     token.markup = '@[toc]';
+    token.block = true;
 
     token = state.push('toc_body', '', 0);
     let label = state.env.tocHeader || TOC_DEFAULT;
@@ -122,27 +123,39 @@ var markdownItToc = function (md) {
       }
     }
 
+    if (headings.length === 0 && !gstate.env.ignoreEmptyTOC) {
+      headings.push({
+        level: 0,
+        anchor: '__error_toc_is_empty__',
+        content: '<strong>ERROR: TOC is empty!</strong>'
+      });
+    }
+
     let indent = 0;
     let list = headings.map(function (heading) {
       let res = [];
       if (heading.level > indent) {
         let ldiff = (heading.level - indent);
         for (let i = 0; i < ldiff; i++) {
-          res.push('<ul>');
+          res.push(' '.repeat(indent * 2), '<ul>\n');
           indent++;
         }
       } else if (heading.level < indent) {
         let ldiff = (indent - heading.level);
         for (let i = 0; i < ldiff; i++) {
-          res.push('</ul>');
+          res.push(' '.repeat(indent * 2 - 2), '</ul>\n');
           indent--;
         }
       }
-      res = res.concat([ '<li><a href="#', heading.anchor, '">', heading.content, '</a></li>' ]);
+      res = res.concat([ ' '.repeat(indent * 2), '<li><a href="#', heading.anchor, '">', heading.content, '</a></li>\n' ]);
       return res.join('');
     });
+    while (indent > 0) {
+      list.push(' '.repeat(indent * 2 - 2), '</ul>\n');
+      indent--;
+    }
 
-    return '<h3>' + tokens[index].content + '</h3>' + list.join('') + new Array(indent + 1).join('</ul>');
+    return '<h3>' + tokens[index].content + '</h3>\n' + list.join('');
   };
 
   md.core.ruler.push('grab_state', function (state) {
@@ -152,6 +165,7 @@ var markdownItToc = function (md) {
     tocHeadings = {};
     bodyHeadings = {};
   });
+  //md.block.ruler.after('paragraph', 'toc', toc);
   md.inline.ruler.after('emphasis', 'toc', toc);
 };
 
