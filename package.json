@@ -2,43 +2,50 @@
   "name": "@gerhobbelt/markdown-it-toc",
   "version": "1.1.1-2",
   "description": "Adds syntax for an automatically generated table of contents to markdown-it markdown parser.",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm run lint; npm run unit",
-    "unit": "mocha -R spec",
-    "lint": "eslint --reset .",
-    "browserify": "(echo \"$HEADER\"; browserify ./ -s markdownitIns) > dist/markdown-it-toc.js",
-    "dist": "npm run test-ci; mkdir -p dist; export HEADER=\"/*! $(npm v . name) $(npm v . version) $(npm v . repository.url) @license $(npm v . license) */\"; npm run browserify; npm run uglify",
-    "uglify": "uglifyjs dist/markdown-it-toc.js -b beautify=false,ascii-only=true -c -m --preamble \"$HEADER\" > dist/markdown-it-toc.min.js",
-    "coverage": "rm -rf coverage;istanbul cover node_modules/.bin/_mocha",
-    "test-ci": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
-    "pub": "npm publish --access public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/CenterForOpenScience/markdown-it-toc"
-  },
   "keywords": [
     "markdown",
     "markdown-it",
     "markdown-it-plugin"
   ],
   "author": "Sam Chrisinger",
+  "repository": "GerHobbelt/markdown-it-toc",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/samchrisinger/markdown-it-toc/issues"
+  "source": "index.js",
+  "main": "index.js",
+  "module": "dist/markdown-it.mjs",
+  "engines": {
+    "node": ">=10"
   },
-  "homepage": "https://github.com/samchrisinger/markdown-it-toc",
+  "scripts": {
+    "build": "make",
+    "test": "make test",
+    "todo": "make todo",
+    "clean": "make clean",
+    "superclean": "make superclean",
+    "doc": "make doc",
+    "lint": "make lint",
+    "lintfix": "make lintfix",
+    "cov": "make report-coverage",
+    "pub": "npm publish --access public"
+  },
   "devDependencies": {
-    "browserify": "16.5.0",
-    "coveralls": "3.0.7",
-    "eslint": "6.6.0",
-    "eslint-plugin-nodeca": "1.0.3",
-    "istanbul": "0.4.5",
-    "@gerhobbelt/markdown-it": "10.0.0-30",
-    "@gerhobbelt/markdown-it-testgen": "0.1.5-6",
-    "mocha": "6.2.2",
-    "uglifyjs": "2.4.11"
+    "@gerhobbelt/markdown-it": "10.0.0-34",
+    "@gerhobbelt/markdown-it-testgen": "0.1.6-7",
+    "browserify": "16.5.1",
+    "chai": "4.2.0",
+    "cross-env": "7.0.2",
+    "eslint": "7.0.0",
+    "mocha": "7.1.2",
+    "nyc": "15.0.1",
+    "rollup": "2.9.1",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-json": "4.0.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "terser": "4.6.13"
   },
-  "dependencies": {}
+  "reporter": [
+    "lcov",
+    "text",
+    "text-summary"
+  ]
 }
