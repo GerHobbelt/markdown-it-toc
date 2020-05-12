@@ -11,7 +11,7 @@ parserOptions:
 rules:
   accessor-pairs:         2
   array-bracket-spacing:  [ 2, "always", { "singleValue": true, "objectsInArrays": true, "arraysInArrays": true } ]
-  block-scoped-var:       2
+  block-scoped-var:       1
   block-spacing:          2
   brace-style:            [ 2, '1tbs', { allowSingleLine: true } ]
   # Postponed
@@ -27,7 +27,7 @@ rules:
   dot-notation:           2
   eol-last:               2
   eqeqeq:                 [ 2, always, { "null": "ignore" } ]
-  func-style:             [ 2, declaration, { "allowArrowFunctions": true } ]
+  func-style:             [ 1, declaration, { "allowArrowFunctions": true } ]
   # Postponed
   #global-require:         2
   guard-for-in:           2
@@ -90,7 +90,7 @@ rules:
   no-lonely-if:           2
   no-loop-func:           2
   no-mixed-requires:      2
-  no-mixed-spaces-and-tabs: 2
+  no-mixed-spaces-and-tabs: 1
   no-multi-str:         2
   # Postponed
   #no-native-reassign:     2
@@ -107,7 +107,7 @@ rules:
   no-octal-escape:        2
   no-path-concat:         2
   no-proto:               2
-  no-redeclare:           2
+  no-redeclare:           1
   # Postponed
   #no-regex-spaces:        2
   no-return-assign:       2
@@ -124,9 +124,10 @@ rules:
   no-unexpected-multiline: 2
   no-unreachable:         2
   no-unused-expressions:  2
-  no-unused-vars:         2
+  no-unused-vars:         1
   no-use-before-define:   2
-  no-var:                 2
+  no-useless-escape:      1
+  no-var:                 1
   no-void:                2
   no-with:                2
   object-curly-spacing:   [ 2, always, { "objectsInObjects": true, "arraysInObjects": true } ]
