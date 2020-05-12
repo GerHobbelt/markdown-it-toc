@@ -4,6 +4,7 @@
 
 let path = require('path');
 let generate = require('@gerhobbelt/markdown-it-testgen');
+
 let md = require('@gerhobbelt/markdown-it')({
   html: true,
   linkify: true,
