@@ -10,7 +10,7 @@ module.exports = function(md) {
 
     function toc(state, silent) {
         while (state.src.indexOf('\n') >= 0 && state.src.indexOf('\n') < state.src.indexOf('@[toc]')) {
-            if (state.tokens.slice(-1)[0].type === 'softbreak') {
+            if (['softbreak', 'hardbreak'].indexOf(state.tokens.slice(-1)[0].type) > -1) {
                 state.src = state.src.split('\n').slice(1).join('\n');
                 state.pos = 0;
             }
@@ -86,7 +86,7 @@ module.exports = function(md) {
     };
 
     md.renderer.rules.toc_body = function(tokens, index) {
-        // Wanted to avoid linear search through tokens here, 
+        // Wanted to avoid linear search through tokens here,
         // but this seems the only reliable way to identify headings
         var headings = [];
         var gtokens = gstate.tokens;

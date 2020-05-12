@@ -86,3 +86,12 @@ Some content
 <p>Some content</p>
 <h2><a id="SubHeading_10"></a>SubHeading</h2>
 .
+
+Test6
+.
+some text  
+@[toc](Title)
+.
+<p>some text<br>
+<h3>Title</h3></p>
+.
